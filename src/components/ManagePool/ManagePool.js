@@ -4,11 +4,11 @@ import { useParams } from "react-router-dom"
 import { getPool } from "../../services/getPools"
 import { withdrawEth } from "../../services/withdrawEth";
 import { depositEth } from "../../services/depositEth";
-import { tokenList } from "../../services/tokenList"
+// Production list only -> import { tokenList } from "../../services/tokenList"
 import { testTokenList } from "../../services/testTokenList"
 import { web3 } from "../../services/init";
 import {
-    PieChart, Pie, Sector, Cell, Tooltip, ResponsiveContainer,
+    PieChart, Pie, Cell, Tooltip,
   } from 'recharts';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042'];
@@ -40,7 +40,7 @@ const ManagePool = () => {
         }
 
         process();
-    }, [])
+    }, [address])
 
     useEffect(() => {
         if (window.ethereum !== undefined) {

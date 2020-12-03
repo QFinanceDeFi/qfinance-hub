@@ -81,7 +81,7 @@ const PoolList = ({pub}) => {
         {message && <MessageBar
             onDismiss={() => setMessage(false)}
             styles={{root: {margin: '24px 0'}}}>
-                View your contract creation transaction: <a href={"https://kovan.etherscan.io/tx/" + txHash} target="_blank" rel="noopener">{txHash}</a>. 
+                View your contract creation transaction: <a href={"https://kovan.etherscan.io/tx/" + txHash} target="_blank" rel="noreferrer">{txHash}</a>. 
                 Check "Internal Txns" to find the address of the new contract.
             </MessageBar>}
         <DetailsList

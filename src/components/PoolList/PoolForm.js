@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { DefaultButton, Dropdown, PrimaryButton, Slider, TextField, Toggle, CompoundButton } from "@fluentui/react"
 import { newPublicPool, newPrivatePool } from "../../services/newPool";
-import { tokenList } from "../../services/tokenList"
+// Production list -> import { tokenList } from "../../services/tokenList"
 import { testTokenList } from "../../services/testTokenList"
 
 const sliderAriaValueText = (value) => `${value} percent`;
@@ -106,10 +106,9 @@ const PoolForm = ({close, update, pub}) => {
         })}
         <Toggle
             label="Public Pool"
-            defaultChecked onText="Public"
+            onText="Public"
             offText="Private"
             className="pool-form_toggle"
-            defaultValue={pub}
             defaultChecked={pub}
             onChange={() => setIsPublic(!isPublic)} />
         {totalPercent !== 0 && totalPercent !== 100 &&
