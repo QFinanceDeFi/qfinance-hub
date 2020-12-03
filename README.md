@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# QFinance Hub
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## A front-end interface to QFinance
 
-## Available Scripts
+### What is QFinance
 
-In the project directory, you can run:
+QFinance is a trustless, decentralized protocol for creating investment pools on Ethereum.
+Create your own private or public pool, or join public pools created by other users on the network.
+Your assets, held securely, by a decentralized contract. Withdraw some or all of your investment at its
+current value at any time in a purely decentralized way.
 
-### `yarn start`
+### How does it work
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+QFinance is a series of smart contracts. The design is quite simple and is inspired by Uniswap. Pools are
+created from a Factory Contract. Simply select the assets you want to invest in, determin the percent of
+your portfolio to allocate to each asset, and create the pool. Then you can fund the pool with ETH as many times
+as you want.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### What is QFinance Hub
 
-### `yarn test`
+QFinance Hub is a front-end interface into the aforementioned decentralized network. It provides a simple
+interface by which to interact with the contracts and pools created. There are no proprietary features to this site.
+All functionality available on this site is available through the contracts programatically.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The features available are:
 
-### `yarn build`
+* See all QFinance Pools
+* Create a public or private pool
+* Deposit ETH into an existing pool (either your own private pool or a public pool)
+* Withdraw ETH from a pool
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Get Started
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+_Note: The app uses Alchemy API for its Ethereum network calls. Before beginning, you must create your own environment in [Alchemy](https://alchemyapi.io). Once you have created your environment, click "View Key" to get your http link with your own connection key._
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Install NodeJS if not installed already (https://nodejs.org)
+2. Install dependencies
+   This app uses yarn... if not installed, first run:
+   ```bash
+      npm install -g yarn
+   ```
+   Then install dependencies:
+   ```bash
+      yarn
+   ```
+3. Create a file at the root of the project called .env.development and add the following values:
+   
+   REACT_APP_web3api=[your Alchemy http env address]
 
-### `yarn eject`
+4. Run development server: 
+   ```bash
+      yarn start
+   ```
+5. Navigate to localhost:3000 to see the site.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Note: This is connecting to the same factory contract as the live version! Once deployed to main net, this will be updated to run in the testnet only.**
