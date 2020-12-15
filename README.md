@@ -45,12 +45,12 @@ _Note: The app uses Alchemy API for its Ethereum network calls. Before beginning
    ```
 3. Create a file at the root of the project called .env.development and add the following values:
    
-   REACT_APP_web3api=[your Alchemy http env address]
+   GATSBY_ETH_JSONRPC_URL=[your Alchemy http env address]
 
 4. Run development server: 
    ```bash
-      yarn start
+      gatsby develop
    ```
-5. Navigate to localhost:3000 to see the site.
+5. Navigate to localhost:8000 to see the site.
 
 **Note: This is connecting to the same factory contract as the live version! Once deployed to main net, this will be updated to run in the testnet only.**
