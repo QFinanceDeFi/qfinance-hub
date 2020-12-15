@@ -190,6 +190,7 @@ const GitLink = styled.div
     color: inherit;
 
     &:hover {
-        cursor: pointer
+        cursor: pointer;
+        color: #CC9966;
     }
 `
