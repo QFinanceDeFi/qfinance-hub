@@ -14,7 +14,7 @@ const Menu = () => {
             <NavLink to="/stake">
                 <NavItem>Stake</NavItem>
             </NavLink>
-            <NavLink to="/">
+            <NavLink to="/qfi">
                 <NavItem>QFI</NavItem>
             </NavLink> 
         </NavMenu>
