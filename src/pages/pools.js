@@ -7,7 +7,9 @@ import Main from "../templates/Main"
 const PoolsPage = () => {
     return (
         <Layout>
-        <SEO title="Pools" />
+        <SEO title="Pools"
+            keywords={[`ethereum`, `earn`, `erc20`, `assets`, `crypto`]}
+        />
             <Main>
                 <Pools />
             </Main>
