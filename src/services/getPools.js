@@ -15,11 +15,11 @@ export const getPools = async (isPublic) => {
                 let currentValue = await contract.methods.totalValue().call();
                 let isPublic = await contract.methods.isPublic().call();
                 res.push({
-                    "Pool Address": addr,
-                    "Pool Name": poolName,
-                    "Creator Address": creator,
-                    "Current Value": currentValue,
-                    "Is Public": isPublic
+                    poolAddress: addr,
+                    poolName: poolName,
+                    creator: creator,
+                    currentValue: Number(web3.utils.fromWei(web3.utils.toHex(new web3.utils.BN(currentValue.toString())), 'ether')),
+                    isPublic: isPublic
                 })
             })
         }
@@ -33,6 +33,7 @@ export const getPools = async (isPublic) => {
 export const getPool = async (address) => {
     try {
         let pool = await new web3.eth.Contract(poolPublicAbi, address);
+        let poolName = await pool.methods.poolName().call();
         let tokens = await pool.methods.getTokens().call();
         let amounts = await pool.methods.getAmounts().call();
         let currentValue = await pool.methods.totalValue().call();
@@ -47,6 +48,7 @@ export const getPool = async (address) => {
             return true;
         })
         let output = {
+            poolName,
             creator,
             currentValue: web3.utils.fromWei(currentValue, 'ether'),
             isPublic,
