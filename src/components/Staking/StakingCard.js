@@ -50,7 +50,7 @@ const StakingCard = ({ address, title, isQPool }) => {
     }
 
     return (
-        <Card maxWidth={"460px"} style={{textAlign: 'center', margin: '24px 12px', borderRadius: '6px'}}>
+        <Card width={"420px"} style={{textAlign: 'center', margin: '24px 12px', borderRadius: '6px'}}>
             <TitleDiv>
                 {title}
             </TitleDiv>
