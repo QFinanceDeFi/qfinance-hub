@@ -1,11 +1,20 @@
 import React from "react";
+import styled from "styled-components";
 
 const Main = ({children}) => {
     return (
-        <div style={{padding: '16px 32px'}}>
+        <MainTemplate>
             {children}
-        </div>
+        </MainTemplate>
     )
 }
 
 export default Main;
+
+const MainTemplate = styled.div
+`
+    padding: 16px 32px;
+    @media (max-width: 767px) {
+        padding: 24px 24px 32px;
+    }
+`
