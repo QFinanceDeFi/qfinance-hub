@@ -3,6 +3,7 @@ import { useLocation } from "@reach/router"
 import SEO from '../seo';
 import Layout from "../Layout/Layout"
 import PoolDetails from "./PoolDetails"
+import Main from "../../templates/Main"
 
 const PoolPage = () => {
     const location = useLocation();
@@ -10,7 +11,9 @@ const PoolPage = () => {
     return (
         <Layout>
         <SEO title="Pool Details" />
-            <PoolDetails address={location.pathname.replace("/pool/", "")} />
+            <Main>
+                <PoolDetails address={location.pathname.replace("/pool/", "")} />
+            </Main>
         </Layout>
     )
 }

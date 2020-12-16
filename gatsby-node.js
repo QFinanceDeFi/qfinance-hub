@@ -7,7 +7,7 @@ exports.onCreatePage = async ({ page, actions }) => {
         createPage({
             path: "/pool",
             matchPath: "/pool/*",
-            component: path.resolve(`src/pages/pool.js`)
+            component: path.resolve(`src/components/Pool/Pool.js`)
         })
     }
 }

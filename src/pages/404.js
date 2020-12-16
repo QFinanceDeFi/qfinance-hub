@@ -1,14 +1,14 @@
 import React from 'react';
-
 import Layout from '../components/Layout/Layout';
+import Main from "../templates/Main";
 import SEO from '../components/seo';
 
 const NotFoundPage = () => (
   <Layout>
     <SEO title="404: Not found" />
-
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <Main>
+    <h1>ROUTE NOT FOUND</h1>
+    </Main>
   </Layout>
 );
 
