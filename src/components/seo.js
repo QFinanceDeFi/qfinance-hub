@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import {useStaticQuery, graphql} from 'gatsby';
-import img from "../assets/images/Q_logo_whiteOnGold.jpg";
 
 function SEO({description, lang, meta, title}) {
     const {site} = useStaticQuery(
@@ -40,7 +39,7 @@ function SEO({description, lang, meta, title}) {
                 },
                 {
                     property: `og:image`,
-                    content: img
+                    content: `https://qfihub.com/static/Q_logo_goldOnWhite.jpg`
                 },
                 {
                     property: `og:description`,
@@ -68,7 +67,7 @@ function SEO({description, lang, meta, title}) {
                 },
                 {
                     name: `twitter:image`,
-                    content: img
+                    content: `https://qfihub.com/static/Q_logo_goldOnWhite.jpg`
                 }
             ].concat(meta)}
         />
