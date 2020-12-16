@@ -13,7 +13,7 @@ const IndexPage = () => {
 
     return (
         <Layout>
-            <SEO title="Home"
+            <SEO title="QFinance"
                 keywords={[`ethereum`, `bitcoin`, `token`, `assets`, `erc20`, `invest`, `buy`]}
             />
             <Main>

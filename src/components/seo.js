@@ -12,6 +12,7 @@ function SEO({description, lang, meta, title}) {
             title
             description
             author
+            logoUrl
           }
         }
       }
@@ -37,6 +38,10 @@ function SEO({description, lang, meta, title}) {
                     content: title,
                 },
                 {
+                    property: `og:image`,
+                    content: site.siteMetadata.logoUrl
+                },
+                {
                     property: `og:description`,
                     content: metaDescription,
                 },
@@ -60,6 +65,10 @@ function SEO({description, lang, meta, title}) {
                     name: `twitter:description`,
                     content: metaDescription,
                 },
+                {
+                    name: `twitter:image`,
+                    content: site.siteMetadata.logoUrl
+                }
             ].concat(meta)}
         />
     );
