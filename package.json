@@ -18,6 +18,7 @@
     "@reach/dialog": "^0.2.9",
     "@reach/tabs": "^0.1.6",
     "@reach/visually-hidden": "^0.1.4",
+    "axios": "^0.21.0",
     "browser-monads": "^1.0.0",
     "dotenv": "^8.2.0",
     "gatsby": "^2.18.10",
@@ -61,5 +62,6 @@
     "clean": "rimraf .cache public",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\" && exit 0"
-  }
+  },
+  "proxy": "http://localhost:7071"
 }

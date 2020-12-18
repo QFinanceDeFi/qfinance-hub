@@ -1,18 +1,46 @@
-import React, { useState, useEffect } from "react";
-import { Card, Box, Flex, Heading, Input, Button } from "rimble-ui";
+import React, { useState } from "react";
+import { Card, Box, Flex, Heading, Input, Button, Loader } from "rimble-ui";
 import styled from "styled-components";
+import axios from "axios";
 
 const SignUp = () => {
     const [twitterHandle, setTwitterHandle] = useState('')
     const [stage, setStage] = useState(1)
+    const [loading, setLoading] = useState(false)
 
     const stepper = () => {
         setStage(stage + 1)
     }
 
+    const moveBack = () => {
+        setStage(stage - 1)
+    }
+
+    const checkFollow = async () => {
+        setLoading(true)
+        let res = await axios.get("/api/CheckFollowers");
+        let formatted = [];
+        res.data.map(item => formatted.push(item.toLowerCase()));
+        if (formatted.includes(twitterHandle.replace('@', '').toLowerCase())) {
+            stepper();
+            setLoading(false);
+            return true
+        } else {
+            window.toastProvider.addMessage("Did you follow us?", {
+                secondaryMessage: "Check your username",
+                variant: 'failure',
+                actionHref: `https://kovan.etherscan.io/tx/${res}`,
+                colorTheme: "light"
+                })
+            moveBack();
+            setLoading(false);
+            return false
+        }
+    }
+
     return (
         <div style={{display: 'flex', width: '100%', justifyContent: 'center'}}>
-        <Card width='50%' maxWidth='800px' minWidth='360px' borderRadius='6px'>
+        <Card width='70%' maxWidth='800px' minWidth='360px' borderRadius='6px'>
             <Box>
                 <Heading textAlign='center' mb={4}>
                     Sign up for the QFI Airdrop
@@ -36,17 +64,23 @@ const SignUp = () => {
                     Now follow us @ <TwitterLink href={`https://twitter.com/QFinanceDeFi`}>QFinance Twitter</TwitterLink>
                 </Heading>
                 <Flex justifyContent='center'>
-                    <Button.Outline width={0.7} onClick={stepper}>Followed</Button.Outline>
+                    {!loading ? <Button.Outline width={0.7} onClick={checkFollow}>Followed</Button.Outline>
+                    :
+                    <Loader size={24} />
+                    }
                 </Flex>
             </Box>
             }
             {stage === 3 &&
             <Box pt={2} pb={4}>
                 <Heading as="h4" textAlign='center' mb={2}>
-                    Now you should join our Telegram community
+                    Thanks for following!
+                </Heading>
+                <Heading as="h5" textAlign='center' mb={2}>
+                    You should join our Telegram group
                 </Heading>
                 <Flex justifyContent='center'>
-                    <Button.Outline width={0.7} onClick={stepper}>Telegram Group</Button.Outline>
+                    <Button.Outline width={0.7} onClick={() => {window.open('https://t.me/QFinanceDeFi'); stepper()}}>Telegram Group</Button.Outline>
                 </Flex>
             </Box>
             }

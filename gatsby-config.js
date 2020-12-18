@@ -10,6 +10,11 @@ module.exports = {
     },
 
     pathPrefix: config.pathPrefix,
+    
+    proxy: {
+        prefix: "/api",
+        url: "http://localhost:7071",
+      },
 
     plugins: [
         `gatsby-plugin-react-helmet`,

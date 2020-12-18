@@ -50,7 +50,7 @@ const CreatePool = () => {
         let res = await newPool(poolName, tokens, isPublic);
         window.toastProvider.addMessage("Transaction Submitted", {
             secondaryMessage: `${res}`,
-            variant: 'pending',
+            variant: 'processing',
             actionHref: `https://kovan.etherscan.io/tx/${res}`,
             actionText: "View", colorTheme: "light"
             })
