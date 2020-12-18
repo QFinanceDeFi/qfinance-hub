@@ -4,7 +4,7 @@ import { BaseStyles, ToastMessage } from "rimble-ui"
 import styled, { ThemeProvider } from "styled-components"
 import Wallet from "../../wallets"
 import { RootStoreContext } from '../../stores/root.store'
-import { FiGithub } from "react-icons/fi"
+import { FiGithub, FiTwitter, FiSend } from "react-icons/fi"
 
 import Navbar from "./Navbar"
 import "../../assets/fonts/inter/font.inter.css"
@@ -150,9 +150,17 @@ const Layout = ( {children} ) => {
                {children}
             <StickyFooter>
                 <Menu />
-                <GitLink onClick={() => window.open('https://github.com/QFinanceDeFi')}>
+                <div style={{display: 'flex'}}>
+                <AppLink onClick={() => window.open(`https://twitter.com/QFinanceDeFi`)}>
+                    <FiTwitter size={18} />
+                </AppLink>
+                <AppLink onClick={() => window.open(`https://t.me/QFinanceDeFi`)}>
+                    <FiSend size={18} />
+                </AppLink>
+                <AppLink onClick={() => window.open('https://github.com/QFinanceDeFi')}>
                     <FiGithub size={18} />
-                </GitLink>
+                </AppLink>
+                </div>
             </StickyFooter>
             <ToastMessage.Provider ref={node => (window.toastProvider = node)} />           
         </ThemeProvider>
@@ -184,10 +192,12 @@ const StickyFooter = styled.div
     }
 `
 
-const GitLink = styled.div
+const AppLink = styled.div
 `
     text-decoration: none;
     color: inherit;
+    margin: 0 6px;
+    align-self: center;
 
     &:hover {
         cursor: pointer;

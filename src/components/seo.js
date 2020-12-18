@@ -43,7 +43,7 @@ function SEO({description, lang, meta, title}) {
                 },
                 {
                     property: `og:description`,
-                    content: metaDescription,
+                    content: `Trustless, decentralized investment pools on Ethereum`,
                 },
                 {
                     property: `og:type`,
@@ -63,7 +63,7 @@ function SEO({description, lang, meta, title}) {
                 },
                 {
                     name: `twitter:description`,
-                    content: metaDescription,
+                    content: `Trustless, decentralized investment pools on Ethereum`,
                 },
                 {
                     name: `twitter:image`,

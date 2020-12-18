@@ -55,7 +55,7 @@ const Token = () => {
                 Developer and Supporter Fund (15%)
             </Heading>
             <Heading as="h5" pl={2} pr={2}>
-                Half of these granted immediately; half locked for 18 months
+                Half of these granted immediately; half locked for 12 months
             </Heading>
             <DistributionList>
                 <ListItem>

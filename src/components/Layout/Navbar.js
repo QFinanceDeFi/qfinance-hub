@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import styled from "styled-components";
 import { window } from "browser-monads";
 import { MetaMaskButton, Flex } from "rimble-ui";
-import { FiGithub } from "react-icons/fi";
+import { FiGithub, FiTwitter, FiSend } from "react-icons/fi";
 import Wallet from "../../wallets";
 import { RootStoreContext } from '../../stores/root.store';
 
@@ -64,10 +64,16 @@ const Navbar = () => {
             </TopMenu>
         </Flex>
         <Flex>
-            <GitLink onClick={() => window.open('https://github.com/QFinanceDeFi')}>
-                <FiGithub size={24} style={{marginRight: '24px'}} />
-            </GitLink>
-            <MetaMaskButton.Outline size="small" onClick={_walletConnect('metamask')}>
+            <AppLink onClick={() => window.open(`https://twitter.com/QFinanceDeFi`)}>
+                <FiTwitter size={20} />
+            </AppLink>
+            <AppLink onClick={() => window.open(`https://t.me/QFinanceDeFi`)}>
+                <FiSend size={20} />
+            </AppLink>
+            <AppLink onClick={() => window.open('https://github.com/QFinanceDeFi')}>
+                <FiGithub size={20} />
+            </AppLink>
+            <MetaMaskButton.Outline ml='12px' size="small" onClick={_walletConnect('metamask')}>
                 {!isLoggedIn ? "Connect MetaMask" : "Connected"}
             </MetaMaskButton.Outline>
         </Flex>
@@ -112,11 +118,12 @@ const TopMenu = styled.div
     }
 `
 
-const GitLink = styled.div
+const AppLink = styled.div
 `
     text-decoration: none;
     color: inherit;
     align-self: center;
+    margin: 0 4px;
 
     &:hover {
         cursor: pointer

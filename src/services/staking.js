@@ -106,10 +106,6 @@ export const sendStake = async (address, amount) => {
 
 export const getEarnings = async (address) => {
     if (!window.ethereum || !window.ethereum.selectedAddress) { return '0'}
-    if (window.ethereum.chainId !== "0x2a") {
-        alert("You must be on the Kovan testnet! Switch to Kovan in Metamask.")
-        return '0'
-    }
 
     try {
         let contract = await new web3.eth.Contract(rewardsContract, address);
@@ -152,10 +148,6 @@ export const claimEarnings = async (address) => {
 
 export const getStakingBalance = async (address) => {
     if (!window.ethereum || !window.ethereum.selectedAddress) { return '0'}
-    if (window.ethereum.chainId !== "0x2a") {
-        alert("You must be on the Kovan testnet! Switch to Kovan in Metamask.")
-        return '0'
-    }
 
     try {
         let contract = await new web3.eth.Contract(rewardsContract, address);
