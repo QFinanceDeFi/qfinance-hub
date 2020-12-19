@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Card, Box, Flex, Heading, Input, Button, Loader } from "rimble-ui";
+import { Card, Box, Flex, Text, Heading, Input, Button, Loader } from "rimble-ui";
 import styled from "styled-components";
 import axios from "axios";
 
@@ -42,9 +42,13 @@ const SignUp = () => {
         <div style={{display: 'flex', width: '100%', justifyContent: 'center'}}>
         <Card width='70%' maxWidth='800px' minWidth='360px' borderRadius='6px'>
             <Box>
-                <Heading textAlign='center' mb={4}>
+                <Heading textAlign='center' mb={2}>
                     Sign up for the QFI Airdrop
                 </Heading>
+                <Text mb={2} textAlign='center'>
+                This airdrop is processed by an <a href="https://github.com/QFinanceDeFi/qfinance-token" target='_blank' rel='noopener noreferrer'>Ethereum smart contract</a>. 
+                You will need to make a 0 ETH transaction from your wallet to sign up. Please connect MetaMask before you continue.
+                </Text>
             </Box>
             {stage === 1 &&
             <Box pt={2} pb={4}>
