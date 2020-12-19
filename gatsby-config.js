@@ -13,7 +13,7 @@ module.exports = {
     
     proxy: {
         prefix: "/api",
-        url: "http://localhost:7071",
+        url: "http://localhost:9091",
       },
 
     plugins: [
