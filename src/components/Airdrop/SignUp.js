@@ -19,8 +19,7 @@ const SignUp = () => {
     const checkFollow = async () => {
         setLoading(true)
         let res = await axios.get("/api/CheckFollowers");
-        let formatted = [];
-        res.data.map(item => formatted.push(item.toLowerCase()));
+        let formatted = res.data.followers.map(item => item.toLowerCase());
         if (formatted.includes(twitterHandle.replace('@', '').toLowerCase())) {
             stepper();
             setLoading(false);
