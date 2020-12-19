@@ -62,6 +62,5 @@
     "clean": "rimraf .cache public",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\" && exit 0"
-  },
-  "proxy": "http://localhost:7071"
+  }
 }
