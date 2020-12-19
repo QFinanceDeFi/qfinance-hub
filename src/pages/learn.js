@@ -11,7 +11,7 @@ import Main from "../templates/Main"
 const LearnPage = () => (
   <Layout>
     <SEO title="Learn More" 
-      keywords={[`ethereum`, `bitcoin`, `what is`, `crypto`, `token`, `assets`, `erc20`, `invest`, `buy`]}
+      keywords={[`ethereum`, `bitcoin`, `what is`, `crypto`, `defi`, `token`, `assets`, `erc20`, `invest`, `buy`]}
     />
     <LearnNav>
       <Links />

@@ -8,7 +8,7 @@ const PoolsPage = () => {
     return (
         <Layout>
         <SEO title="Pools"
-            keywords={[`ethereum`, `earn`, `erc20`, `assets`, `crypto`]}
+            keywords={[`ethereum`, `earn`, `erc20`, `assets`, `crypto`, `defi`, `stake`]}
         />
             <Main>
                 <Pools />

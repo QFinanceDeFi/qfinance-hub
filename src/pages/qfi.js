@@ -8,7 +8,7 @@ const QFI = () => {
     return (
         <Layout>
         <SEO title="QFI Token"
-            keywords={[`ethereum`, `earn`, `erc20`, `token`, `crypto`]}
+            keywords={[`ethereum`, `earn`, `erc20`, `token`, `crypto`, `qfi`, `qfinance`]}
         />
             <Main>
                 <Token />

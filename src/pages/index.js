@@ -14,7 +14,7 @@ const IndexPage = () => {
     return (
         <Layout>
             <SEO title="QFinance"
-                keywords={[`ethereum`, `bitcoin`, `token`, `assets`, `erc20`, `invest`, `buy`]}
+                keywords={[`ethereum`, `bitcoin`, `crypto`, `defi`, `token`, `assets`, `erc20`, `invest`, `buy`]}
             />
             <Main>
                 <Hero />
