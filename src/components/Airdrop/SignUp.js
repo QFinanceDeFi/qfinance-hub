@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Card, Box, Flex, Text, Heading, Input, Button, Loader } from "rimble-ui";
 import styled from "styled-components";
 import axios from "axios";
+import { airdropSignUp, getClosingTime } from "../../services/airdrop";
 
 const SignUp = () => {
     const [twitterHandle, setTwitterHandle] = useState('')
@@ -28,12 +29,33 @@ const SignUp = () => {
             window.toastProvider.addMessage("Did you follow us?", {
                 secondaryMessage: "Check your username",
                 variant: 'failure',
-                actionHref: `https://kovan.etherscan.io/tx/${res}`,
+                actionHref: `https://etherscan.io/tx/${res}`,
                 colorTheme: "light"
                 })
             moveBack();
             setLoading(false);
             return false
+        }
+    }
+
+    const handleSignUp = async () => {
+        let res = await airdropSignUp();
+        if (!res) {
+            window.toastProvider.addMessage("Transaction failed", {
+                secondaryMessage: "Have you already signed up?",
+                variant: 'failure',
+                colorTheme: "light"
+                })
+            return
+        } else if (res) {
+            window.toastProvider.addMessage("Transaction submitted", {
+                secondaryMessage: `Address: ${window.ethereum.selectedAddress}`,
+                variant: 'processing', actionText: 'View',
+                actionHref: `https://etherscan.io/tx/${res}`,
+                colorTheme: "light"
+                })
+            stepper();
+            return
         }
     }
 
@@ -44,8 +66,11 @@ const SignUp = () => {
                 <Heading textAlign='center' mb={2}>
                     Sign up for the QFI Airdrop
                 </Heading>
-                <Text mb={2} textAlign='center'>
-                This airdrop is processed by an <a href="https://github.com/QFinanceDeFi/qfinance-token" target='_blank' rel='noopener noreferrer'>Ethereum smart contract</a>. 
+                <Heading as='h4' textAlign='center' mb={2}>
+                    You can claim your tokens after {new Date(1611033511 * 1000).toLocaleDateString()}
+                </Heading>
+                <Text mb={2} textAlign='center' fontSize='14px'>
+                This airdrop is processed by a <a href="https://github.com/QFinanceDeFi/qfinance-token" target='_blank' rel='noopener noreferrer'>smart contract</a>. 
                 You will need to make a 0 ETH transaction from your wallet to sign up. Please connect MetaMask before you continue.
                 </Text>
             </Box>
@@ -93,7 +118,7 @@ const SignUp = () => {
                     Now you're ready to sign up!
                 </Heading>
                 <Flex justifyContent='center'>
-                    <Button width={0.7} onClick={stepper}>Sign up</Button>
+                    <Button width={0.7} onClick={handleSignUp}>Sign up</Button>
                 </Flex>
             </Box>
             }

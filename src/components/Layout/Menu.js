@@ -16,7 +16,10 @@ const Menu = () => {
             </NavLink>
             <NavLink to="/qfi">
                 <NavItem>QFI</NavItem>
-            </NavLink> 
+            </NavLink>
+            <NavLink to="/airdrop">
+                <NavItem>Airdrop</NavItem>
+            </NavLink>
         </NavMenu>
     )
 }
@@ -42,8 +45,8 @@ const NavLink = styled(Link)
 `
     text-decoration: none;
     color: inherit;
-    padding: 6px;
-    width: 64px;
+    padding: 8px;
+    width: 56px;
     text-align: center;
     border-radius: 6px;
 
