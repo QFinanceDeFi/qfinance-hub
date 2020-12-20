@@ -7,6 +7,7 @@ const Token = () => {
         <div style={{display: 'flex', justifyContent: 'center', margin: '24px 0 42px 0'}}>
         <Card maxWidth='768px' p={4} borderRadius='6px' justifyContent='center'>
             <Heading as="h1" p={2}>QFI Token</Heading>
+            <Heading as="h5" p={2}>Token address <a href="https://etherscan.io/address/0x6fE88a211863D0d818608036880c9A4b0EA86795" target="_blank" rel="noopener noreferrer">0x6fE88a211863D0d818608036880c9A4b0EA86795</a></Heading>
             <Heading as="h2" pl={2} pr={2}>The QFinance governance token</Heading>
             <Text p={2} fontSize='14px'>
                 This token is a governance token. It helps the QFinance protocol reflect the wishes and the design decisions that

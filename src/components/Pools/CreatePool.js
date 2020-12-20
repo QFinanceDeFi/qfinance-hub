@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { navigate } from "gatsby";
 import styled from "styled-components"
 import { Button, Box, Flex, Heading, Text, Form, Input, Field, Select, Slider } from "rimble-ui";
-import {testTokenList} from "../../services/testTokenList";
+import {tokenList} from "../../services/tokenList";
 import { newPool } from "../../services/newPool";
 
 const CreatePool = () => {
@@ -79,16 +79,16 @@ const CreatePool = () => {
               <Heading.h3>Create New Pool</Heading.h3>
                   <Field label="Pool Name" width={1}>
                       <Input
-                        type="text" required
+                        type="text" required placeholder="Pool Name"
                         onChange={e => setPoolName(e.target.value)} value={poolName} width={1} />
                   </Field>
                   {tokens.map((item, index) => {
                       return (
                           <div key={index}>
                           <Heading as='h4' width={1}>{`Token ${index + 1}`}</Heading>
-                              <Select required options={testTokenList} placeholder='' value={item.address} onChange={e => handleTokenChange(e, index)} width={1} />
-                              <Text fontSize={1}>Please verify the token address: </Text>
-                              <TokenLink fontSize={1} onClick={() => window.open(`https://kovan.etherscan.io/address/${item.address}`)}>{item.address}</TokenLink>
+                              <Select required options={tokenList} placeholder='' value={item.address} onChange={e => handleTokenChange(e, index)} width={1} />
+                              <Text fontSize={1}>Please verify the address for {item.address !== '' ? tokenList.find(tk => tk.value === item.address).symbol : 'token'}</Text>
+                              <TokenLink fontSize={1} onClick={() => window.open(`https://etherscan.io/address/${item.address}`)}>{item.address}</TokenLink>
                               <Text style={{margin: '8px 0 4px 0'}}>{`Percent Allocation: ${item.percent}%`}</Text>
                               <Slider min="0" max="100" step="1" onChange={e => handlePercentChange(e, index)} width={0.5}/>
                               <Flex style={{margin: '12px 0'}}>

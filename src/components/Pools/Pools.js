@@ -26,11 +26,13 @@ const Pools = () => {
 
     useEffect(() => {
         const searchOptions = val => {
-            if (selected === "Private") {
-                setOptions(privatePools.filter(item => item.poolAddress.startsWith(val)))
-            } else if (selected === "Public") {
-                setOptions(publicPools.filter(item => item.poolAddress.startsWith(val)));
-            }  
+            if (options.length > 0) {
+                if (selected === "Private") {
+                    setOptions(privatePools.filter(item => item.poolAddress.startsWith(val)))
+                } else if (selected === "Public") {
+                    setOptions(publicPools.filter(item => item.poolAddress.startsWith(val)));
+                }
+            }
         }
 
         searchOptions(search)

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Box, Flex, Modal, Button, Text, Card, Heading, Field, Input } from "rimble-ui";
 import styled from 'styled-components'
-import { getStakingBalance, getEarnings, claimEarnings } from "../../services/staking"
+import { getStakingBalance, getEarnings, claimEarnings, withdrawStakingBalance } from "../../services/staking"
 
 const Rewards = ({ open, close, address }) => {
     const [earned, setEarned] = useState('0')
@@ -16,6 +16,28 @@ const Rewards = ({ open, close, address }) => {
         if (!res) {
             window.toastProvider.addMessage("Transaction Failed", {
                 variant: 'error',
+                actionHref: `https://etherscan.io/address/${window.ethereum.selectedAddress}`,
+                actionText: "View", colorTheme: "light"
+            })
+            resetState();
+            return
+        }
+        window.toastProvider.addMessage("Transaction Submitted", {
+            secondaryMessage: `${res}`,
+            variant: 'processing',
+            actionHref: `https://kovan.etherscan.io/tx/${res}`,
+            actionText: "View", colorTheme: "light"
+            })
+        resetState();
+        setUpdate(true);
+        return res
+    }
+
+    const withdrawStake = async () => {
+        let res = await withdrawStakingBalance(address, withdrawAmount);
+        if (!res) {
+            window.toastProvider.addMessage("Transaction Failed", {
+                variant: 'failed',
                 actionHref: `https://kovan.etherscan.io/address/${window.ethereum.selectedAddress}`,
                 actionText: "View", colorTheme: "light"
             })
@@ -87,7 +109,7 @@ const Rewards = ({ open, close, address }) => {
             borderColor={"#E8E8E8"}
             justifyContent={"flex-end"}>
                 <Button.Outline onClick={resetState}>Cancel</Button.Outline>
-                <Button ml={3}>Withdraw</Button>
+                <Button ml={3} onClick={withdrawStake}>Withdraw</Button>
           </Flex>
         </Card>
       </Modal>

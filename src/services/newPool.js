@@ -1,10 +1,6 @@
 import { factory, factoryAddress } from "./init";
 
 export const newPool = async (name, tokens, isPublic) => {
-    if (window.ethereum.chainId !== "0x2a") {
-        alert("You must be on the Kovan testnet! Switch to Kovan in Metamask.")
-        return
-    }
     let addresses = tokens.map(item => item.address)
     let amounts = tokens.map(item => item.percent)
     let data;

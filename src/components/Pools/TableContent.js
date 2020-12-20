@@ -9,7 +9,9 @@ const TableContent = ({options, sort}) => {
     const [sorted, setSorted] = useState(false);
 
     useEffect(() => {
-        sort(sortAsc)
+        if (options.length > 0) {
+            sort(sortAsc)
+        }
     }, [sortAsc, sort])
 
     return (
@@ -24,7 +26,7 @@ const TableContent = ({options, sort}) => {
             </tr>
         </TableHead>
         <tbody>
-        {options.length > 0 && options.map(item => (
+        {options > 0 && options.map(item => (
             <TableRow key={item.poolAddress} onClick={() => navigate(`/pool/${item.poolAddress}`)}>
                 <TableItem>{item.poolName}</TableItem>
                 <TableItem>{item.poolAddress}</TableItem>

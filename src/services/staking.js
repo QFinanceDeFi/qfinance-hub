@@ -41,10 +41,6 @@ export const checkAllowance = async (stakingToken, rewardsContract) => {
 
 export const approveStaking = async (address, stakingToken, amount) => {
     if (!window.ethereum || !window.ethereum.selectedAddress) { return false}
-    if (window.ethereum.chainId !== "0x2a") {
-        alert("You must be on the Kovan testnet! Switch to Kovan in Metamask.")
-        return
-    }
 
     let contract = await new web3.eth.Contract(IERC20, stakingToken);
     let stakeAmount = web3.utils.toWei(amount, 'ether');
@@ -74,10 +70,6 @@ export const approveStaking = async (address, stakingToken, amount) => {
 
 export const sendStake = async (address, amount) => {
     if (!window.ethereum || !window.ethereum.selectedAddress) { return false}
-    if (window.ethereum.chainId !== "0x2a") {
-        alert("You must be on the Kovan testnet! Switch to Kovan in Metamask.")
-        return
-    }
 
     let contract = await new web3.eth.Contract(rewardsContract, address);
     let stakeAmount = web3.utils.toWei(amount, 'ether');
@@ -120,10 +112,6 @@ export const getEarnings = async (address) => {
 
 export const claimEarnings = async (address) => {
     if (!window.ethereum || !window.ethereum.selectedAddress) { return false}
-    if (window.ethereum.chainId !== "0x2a") {
-        alert("You must be on the Kovan testnet! Switch to Kovan in Metamask.")
-        return
-    }
 
     try {
         let contract = await new web3.eth.Contract(rewardsContract, address);
@@ -160,12 +148,8 @@ export const getStakingBalance = async (address) => {
     }
 }
 
-export const withdrawStakingaBalacence = async (address, amount) => {
+export const withdrawStakingBalance = async (address, amount) => {
     if (!window.ethereum || !window.ethereum.selectedAddress) { return false}
-    if (window.ethereum.chainId !== "0x2a") {
-        alert("You must be on the Kovan testnet! Switch to Kovan in Metamask.")
-        return false
-    }
 
     try {
         let contract = await new web3.eth.Contract(rewardsContract, address);

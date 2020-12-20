@@ -1,10 +1,6 @@
 import { poolPublicAbi, web3 } from "./init";
 
 export const depositEth = async (address, amount) => {
-    if (window.ethereum.chainId !== "0x2a") {
-        alert("You must be on the Kovan testnet! Switch to Kovan in Metamask.")
-        return
-    }
     let pool = await new web3.eth.Contract(poolPublicAbi, address);
     let data = await pool.methods.processDeposit().encodeABI();
     const transactionParameters = {

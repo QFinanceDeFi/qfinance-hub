@@ -10,8 +10,7 @@ const StakingPage = () => {
         <Layout>
         <SEO title="Stake to earn QFI" keywords={[`stake`, `earn`, `pool`, `ethereum`, `crypto`, `defi`, `erc20`, `token`]} />
         <Flex justifyContent='center' flexWrap='wrap' mb='64px'>
-            <StakingCard title='DAI-UNI-MKR QPool' address='0xbF064B8f305c0b5B1feafA9d2eb893C70F76794F' isQPool={true} />
-            <StakingCard title='QFI Staking' address='0xE05D21934e7E522C342F9439F7D7C1250E089001' isQPool={false} />
+            <h3 style={{margin: '32px 16px'}}>Staking contracts will be opened soon!</h3>
         </Flex>
         </Layout>
     )

@@ -13,8 +13,8 @@ const DepositModal = ({ open, close, address }) => {
       close();
       window.toastProvider.addMessage("Transaction Submitted", {
         secondaryMessage: `${res}`,
-        variant: 'pending',
-        actionHref: `https://kovan.etherscan.io/tx/${res}`,
+        variant: 'processing',
+        actionHref: `https://etherscan.io/tx/${res}`,
         actionText: "View", colorTheme: "light"
         })
       return res
@@ -37,7 +37,7 @@ const DepositModal = ({ open, close, address }) => {
 
           <Box p={[4]}>
             <Heading.h3>Deposit ETH to Pool</Heading.h3>
-            <AddressLink onClick={() => window.open(`https://kovan.etherscan.io/address/${address}`)}>
+            <AddressLink onClick={() => window.open(`https://etherscan.io/address/${address}`)}>
                 {address}
             </AddressLink>
           </Box>
