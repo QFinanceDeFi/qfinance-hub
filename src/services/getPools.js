@@ -8,6 +8,7 @@ export const getPools = async (isPublic) => {
             await factory.methods.getPrivatePools().call();
         let res = [];
         if (pools.length > 0) {
+            console.log(res)
             pools.map(async (addr) => {
                 let contract = new web3.eth.Contract(poolPublicAbi, addr);
                 let creator = await contract.methods.creator().call();

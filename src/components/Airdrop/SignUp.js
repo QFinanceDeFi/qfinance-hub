@@ -92,7 +92,7 @@ const SignUp = () => {
                     Now follow us @ <TwitterLink href={`https://twitter.com/QFinanceDeFi`}>QFinance Twitter</TwitterLink>
                 </Heading>
                 <Flex justifyContent='center'>
-                    {!loading ? <Button.Outline width={0.7} onClick={checkFollow}>Followed</Button.Outline>
+                    {!loading ? <Button.Outline width={0.7} onClick={stepper}>Followed</Button.Outline>
                     :
                     <Loader size={24} />
                     }
