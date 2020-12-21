@@ -26,7 +26,7 @@ const TableContent = ({options, sort}) => {
             </tr>
         </TableHead>
         <tbody>
-        {options > 0 && options.map(item => (
+        {options.map(item => (
             <TableRow key={item.poolAddress} onClick={() => navigate(`/pool/${item.poolAddress}`)}>
                 <TableItem>{item.poolName}</TableItem>
                 <TableItem>{item.poolAddress}</TableItem>

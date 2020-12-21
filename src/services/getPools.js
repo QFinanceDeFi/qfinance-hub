@@ -8,9 +8,8 @@ export const getPools = async (isPublic) => {
             await factory.methods.getPrivatePools().call();
         let res = [];
         if (pools.length > 0) {
-            console.log(res)
             pools.map(async (addr) => {
-                let contract = new web3.eth.Contract(poolPublicAbi, addr);
+                let contract = await new web3.eth.Contract(poolPublicAbi, addr);
                 let creator = await contract.methods.creator().call();
                 let poolName = await contract.methods.poolName().call();
                 let currentValue = await contract.methods.totalValue().call();
@@ -23,6 +22,7 @@ export const getPools = async (isPublic) => {
                     isPublic: isPublic
                 })
             })
+            return res
         }
         return res;
     }
