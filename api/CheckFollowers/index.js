@@ -8,7 +8,7 @@ const client = new Twitter({
 });
 
 module.exports = async function (context, req) {
-  let params = { screen_name: process.env.TWITTER_USERNAME }
+  let params = { screen_name: process.env.TWITTER_USERNAME, count: 150 }
   let data = await client.get('followers/list', params).then(res => {
     return res.users
   })
