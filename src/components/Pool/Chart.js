@@ -1,16 +1,16 @@
 import React from "react"
 import { ResponsivePie } from '@nivo/pie'
 import styled from "styled-components"
-import { testTokenList } from "../../services/testTokenList"
+import { tokenList } from "../../services/tokenList"
 import { web3 } from "../../services/init"
 
 const Chart = ({ data }) => (
     <ResponsivePie
         data={data.map(item => ({
-            id: testTokenList.find(tk => web3.utils.toChecksumAddress(tk.value) === item.address).label,
-            label: testTokenList.find(tk => web3.utils.toChecksumAddress(tk.value) === item.address).label,
+            id: tokenList.find(tk => web3.utils.toChecksumAddress(tk.value) === item.address).label,
+            label: tokenList.find(tk => web3.utils.toChecksumAddress(tk.value) === item.address).label,
             value: item.percent,
-            color: testTokenList.find(tk => web3.utils.toChecksumAddress(tk.value) === item.address).color
+            color: tokenList.find(tk => web3.utils.toChecksumAddress(tk.value) === item.address).color
         }))}
         margin={{ top: 40, right: 120, bottom: 40, left: 120 }}
         innerRadius={0.35}
