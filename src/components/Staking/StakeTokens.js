@@ -16,7 +16,7 @@ const StakeTokens = ({ open, close, address, allowance, update }) => {
         if (!res) {
             window.toastProvider.addMessage("Transaction Failed", {
                 variant: 'error',
-                actionHref: `https://kovan.etherscan.io/tx/${window.ethereum.selectedAddress}`,
+                actionHref: `https://etherscan.io/tx/${window.ethereum.selectedAddress}`,
                 actionText: "View", colorTheme: "light"
             })
             resetState();
@@ -25,7 +25,7 @@ const StakeTokens = ({ open, close, address, allowance, update }) => {
         window.toastProvider.addMessage("Transaction Submitted", {
             secondaryMessage: `${res}`,
             variant: 'processing',
-            actionHref: `https://kovan.etherscan.io/tx/${res}`,
+            actionHref: `https://etherscan.io/tx/${res}`,
             actionText: "View", colorTheme: "light"
             })
         update();
@@ -50,7 +50,7 @@ const StakeTokens = ({ open, close, address, allowance, update }) => {
 
           <Box p={4} pb={2}>
             <Heading.h3>Stake Tokens</Heading.h3>
-            <AddressLink onClick={() => window.open(`https://kovan.etherscan.io/address/${address}`)}>
+            <AddressLink onClick={() => window.open(`https://etherscan.io/address/${address}`)}>
                 {address}
             </AddressLink>
             <BalanceText mt='8px' fontWeight='bold' onClick={() => setStakingAmount(allowance)}>{`Approved for transfer: ${allowance}`}</BalanceText>

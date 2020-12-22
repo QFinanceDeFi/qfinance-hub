@@ -56,7 +56,7 @@ const PoolDetails = ( {address} ) => {
             <TitleDiv>
                 {state.poolName}
             </TitleDiv>
-            <AddressLink href={`https://kovan.etherscan.io/address/${state.address}`}>
+            <AddressLink href={`https://etherscan.io/address/${state.address}`}>
                 {`${state.address}`}
             </AddressLink>
             <PoolData>

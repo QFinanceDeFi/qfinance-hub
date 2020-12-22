@@ -51,7 +51,7 @@ const CreatePool = () => {
         window.toastProvider.addMessage("Transaction Submitted", {
             secondaryMessage: `${res}`,
             variant: 'processing',
-            actionHref: `https://kovan.etherscan.io/tx/${res}`,
+            actionHref: `https://etherscan.io/tx/${res}`,
             actionText: "View", colorTheme: "light"
             })
         clearState();

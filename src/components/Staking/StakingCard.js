@@ -54,7 +54,7 @@ const StakingCard = ({ address, title, isQPool }) => {
             <TitleDiv>
                 {title}
             </TitleDiv>
-            <AddressLink onClick={() => window.open(`https://kovan.etherscan.io/address/${state.stakingToken}`)}>
+            <AddressLink onClick={() => window.open(`https://etherscan.io/address/${state.stakingToken}`)}>
                 Contract Address: {state.stakingToken}
             </AddressLink>
             {isQPool ?

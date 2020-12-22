@@ -15,7 +15,7 @@ const Rewards = ({ open, close, address }) => {
         let res = await claimEarnings(address);
         if (!res) {
             window.toastProvider.addMessage("Transaction Failed", {
-                variant: 'error',
+                variant: 'failure',
                 actionHref: `https://etherscan.io/address/${window.ethereum.selectedAddress}`,
                 actionText: "View", colorTheme: "light"
             })
@@ -25,7 +25,7 @@ const Rewards = ({ open, close, address }) => {
         window.toastProvider.addMessage("Transaction Submitted", {
             secondaryMessage: `${res}`,
             variant: 'processing',
-            actionHref: `https://kovan.etherscan.io/tx/${res}`,
+            actionHref: `https://etherscan.io/tx/${res}`,
             actionText: "View", colorTheme: "light"
             })
         resetState();
@@ -37,8 +37,8 @@ const Rewards = ({ open, close, address }) => {
         let res = await withdrawStakingBalance(address, withdrawAmount);
         if (!res) {
             window.toastProvider.addMessage("Transaction Failed", {
-                variant: 'failed',
-                actionHref: `https://kovan.etherscan.io/address/${window.ethereum.selectedAddress}`,
+                variant: 'failure',
+                actionHref: `https://etherscan.io/address/${window.ethereum.selectedAddress}`,
                 actionText: "View", colorTheme: "light"
             })
             resetState();
@@ -47,7 +47,7 @@ const Rewards = ({ open, close, address }) => {
         window.toastProvider.addMessage("Transaction Submitted", {
             secondaryMessage: `${res}`,
             variant: 'processing',
-            actionHref: `https://kovan.etherscan.io/tx/${res}`,
+            actionHref: `https://etherscan.io/tx/${res}`,
             actionText: "View", colorTheme: "light"
             })
         resetState();
@@ -83,7 +83,7 @@ const Rewards = ({ open, close, address }) => {
 
           <Box p={4} pb={2}>
             <Heading.h3>Staking Rewards</Heading.h3>
-            <AddressLink onClick={() => window.open(`https://kovan.etherscan.io/address/${address}`)}>
+            <AddressLink onClick={() => window.open(`https:/etherscan.io/address/${address}`)}>
                 {address}
             </AddressLink>
           </Box>
