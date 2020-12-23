@@ -6,6 +6,12 @@ export const tokenList = [
     "color": "#FF9900"
   },
   {
+    "label": "Aave Token",
+    "value": "0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9",
+    "symbol": "AAVE",
+    "color": "#688DB5"
+  },
+  {
     "label": "Amon",
     "value": "0x737F98AC8cA59f2C68aD658E3C3d8C8963E40a4c",
     "symbol": "AMN",

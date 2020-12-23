@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react"
 import styled from "styled-components"
 import { navigate } from "gatsby"
 import { Card, Heading, Loader, Button } from "rimble-ui"
-import { getPool } from "../../services/getPools"
+import { getPool, getShare } from "../../services/getPools"
 import Chart from "./Chart"
 import DepositModal from "./DepositModal"
 import WithdrawModal from "./WithdrawModal"
@@ -16,6 +16,7 @@ const PoolDetails = ( {address} ) => {
         currentValue: 0
     })
     const [breakdown, setBreakdown] = useState([])
+    const [userShare, setUserShare] = useState(0)
     const [depositModalOpen, setDepositModalOpen] = useState(false)
     const [withdrawModalOpen, setWithdrawModalOpen] = useState(false)
 
@@ -25,6 +26,8 @@ const PoolDetails = ( {address} ) => {
             if (res === false) {
                 return navigate('/404');
             }
+            let share = await getShare(address);
+            setUserShare(share);
             setState({
                 poolName: res.poolName,
                 address,
@@ -66,6 +69,7 @@ const PoolDetails = ( {address} ) => {
                 <ValueDiv>
                     {`Total value: ${parseFloat(state.currentValue).toFixed(4)} ETH`}
                 </ValueDiv>
+                <Heading as="h5">{`Your approx. value: ${parseFloat(userShare * state.currentValue).toFixed(4)} ETH`}</Heading>
                 <PoolGraph>
                 {breakdown.length > 0 &&
                     <Chart data={breakdown} />

@@ -39,7 +39,7 @@ export const getPool = async (address) => {
         let amounts = await pool.methods.getAmounts().call();
         let currentValue = await pool.methods.totalValue().call();
         let creator = await pool.methods.creator().call();
-        let isPublic = await pool.methods.isPublic().call();
+        let isPublic = await pool.methods.isPublic().call(); 
         let breakdown = [];
         tokens.map((item, index) => {
             breakdown.push({
@@ -59,5 +59,21 @@ export const getPool = async (address) => {
     }
     catch(e) {
         return false
+    }
+}
+
+export const getShare = async (address) => {
+    try {
+        let pool = await new web3.eth.Contract(poolPublicAbi, address);
+        let userHoldings = web3.utils.fromWei(await pool.methods.balanceOf(window.ethereum.selectedAddress).call(), 'ether');
+        if (userHoldings === '0') {
+            return 0
+        }
+        let total = web3.utils.fromWei(await pool.methods.totalSupply().call(), 'ether');
+        let share = userHoldings / total;
+        return share
+    }
+    catch(e) {
+        return 0
     }
 }
