@@ -45,8 +45,8 @@ const NavLink = styled(Link)
 `
     text-decoration: none;
     color: inherit;
-    padding: 8px;
-    width: 56px;
+    padding: 6px;
+    width: 50px;
     text-align: center;
     border-radius: 6px;
 

@@ -12,7 +12,7 @@ const TableContent = ({options, sort}) => {
         if (options.length > 0) {
             sort(sortAsc)
         }
-    }, [sortAsc, sort])
+    }, [sortAsc, sort, options.length])
 
     return (
     <Table>

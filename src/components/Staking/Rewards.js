@@ -83,7 +83,7 @@ const Rewards = ({ open, close, address }) => {
 
           <Box p={4} pb={2}>
             <Heading.h3>Staking Rewards</Heading.h3>
-            <AddressLink onClick={() => window.open(`https:/etherscan.io/address/${address}`)}>
+            <AddressLink onClick={() => window.open(`https://etherscan.io/address/${address}`)}>
                 {address}
             </AddressLink>
           </Box>

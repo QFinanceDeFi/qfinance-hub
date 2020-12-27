@@ -55,7 +55,7 @@ const StakingCard = ({ address, title, isQPool }) => {
                 {title}
             </TitleDiv>
             <AddressLink onClick={() => window.open(`https://etherscan.io/address/${state.stakingToken}`)}>
-                Contract Address: {state.stakingToken}
+                Staking Asset Contract Address: {state.stakingToken}
             </AddressLink>
             {isQPool ?
                 <HelperText onClick={() => navigate(`/pool/${state.stakingToken}`)}>

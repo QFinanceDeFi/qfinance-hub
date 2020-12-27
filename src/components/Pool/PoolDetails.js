@@ -59,7 +59,7 @@ const PoolDetails = ( {address} ) => {
             <TitleDiv>
                 {state.poolName}
             </TitleDiv>
-            <AddressLink href={`https://etherscan.io/address/${state.address}`}>
+            <AddressLink href={`https://etherscan.io/address/${state.address}`} target="_blank" rel="noopener noreferrer">
                 {`${state.address}`}
             </AddressLink>
             <PoolData>
@@ -79,12 +79,14 @@ const PoolDetails = ( {address} ) => {
             <PoolActions>
                 <Button
                     onClick={() => setDepositModalOpen(true)}
-                    icon="Add" px={2} minWidth='10rem' marginRight='2vw'>
+                    icon="Add" px={2} minWidth='10rem' marginRight='2vw'
+                    disabled={!state.isPublic && window.ethereum.selectedAddress !== state.creator}>
                     Deposit
                 </Button>
                 <Button.Outline
                     onClick={() => setWithdrawModalOpen(true)}
-                    icon="Remove" px={2} minWidth='10rem' marginLeft='2vw'>
+                    icon="Remove" px={2} minWidth='10rem' marginLeft='2vw'
+                    disabled={!state.isPublic && window.ethereum.selectedAddress !== state.creator}>
                 Withdraw</Button.Outline>
             </PoolActions>
         </>
