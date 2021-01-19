@@ -3,7 +3,7 @@ import { useLocation } from "@reach/router";
 import styled from "styled-components";
 import ReactMarkdown from "react-markdown";
 
-import { about, qhub, thanks, create, join, deposit, withdraw, start, stake, trade } from "./Content";
+import { about, qhub, thanks, create, join, deposit, withdraw, start, stake, trade, roadmap } from "./Content";
 
 const Learn = () => {
     let location = useLocation();
@@ -30,6 +30,8 @@ const Learn = () => {
             return start
         } else if (path === "credits") {
             return thanks
+        } else if (path === "roadmap") {
+            return roadmap
         }
     }
 

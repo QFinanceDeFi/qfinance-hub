@@ -41,6 +41,10 @@ const links = [
         url: "#trade-qfi"
     },
     {
+        name: "Roadmap",
+        url: "#roadmap"
+    },
+    {
         name: "Credits",
         url: "#credits"
     }

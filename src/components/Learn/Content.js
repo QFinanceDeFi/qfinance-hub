@@ -30,6 +30,23 @@ will have a smaller share of a larger pool, equalling out the value. Deposit tok
 a reward and governance token used by QFinance. Additionally, network participants are free to set up their own
 staking systems and rewards to provide users an incentive to join their pool.
 
+## Differentiators
+
+There are similar asset/investment pool protocols available. QFinance has a few unique features. 
+
+First, many of the similar investment pool protocols require a "manager" or follow an index. These are great solutions for
+some cases, but QFinance has a different vision. In the future, public pools will be managed entirely by the depositors.
+The creator may set an initial vision for the fund (i.e. "DeFi Blue Chips"). But investors in the pool will have the ability
+to vote on rebalancing decisions (when/how) through their stake of QPDTs. A traditional ETF is managed by a fund manager; QPools
+are managed by the users directly.
+
+Second, QFinance seeks to be a protocol owned and managed by the community. Through staking of deposit tokens, new QFI tokens are
+granted to the users of the protocol. Additional staking pools reward QFI holders, and QFI-ETH Uniswap liquidity providers with new
+QFI. This way, the project rewards its ecosystem with new QFI tokens. The QFI tokens are then used to vote on protocol decisions, such
+as staking pool reward allocation, and new feature prioritization.
+
+Lastly, QFinance is a simple solution. If you just want to invest in a pool and earn some QFI, it is super easy and always will be.
+
 ## Is QFinance Centralized?
 
 There is absolutely no central party with any control whatsover over the QFinance protocol. This website is a simple
@@ -228,7 +245,21 @@ export const trade =
 `
 # Buying and Selling QFI
 
-This section will be updated once QFI begins trading.
+QFI is now trading on Uniswap! [Click here to trade](https://uniswap.exchange/swap?inputCurrency=0x6fe88a211863d0d818608036880c9a4b0ea86795&outputCurrency=ETH).
+
+## Token Address
+
+QFI token address is 0x6fe88a211863d0d818608036880c9a4b0ea86795
+
+## Locked Liquidity
+
+Liquidity is locked on Unicrypt. Verify by pasting the token address at https://v2.unicrypt.network/tokens.
+
+## Want to provide liquidity?
+
+A strong ecosystem is a key part of any successful DeFi project. Uniswap QFI-ETH liquidity providers can stake their
+tokens on the staking page to earn QFI. The founding team has provided initial liquidity, but new LPs are encouraged
+to join and strengthen the ecosystem for all, and to earn QFI while doing so!
 `
 
 export const start =
@@ -259,6 +290,28 @@ portfolio that the token represents.
 5. When you are ready to withdraw, type a percentage value that you would like to withdraw. This percentage is relative to the
 amount that you have deposited, your ownership stake of the overall pool, and the current value of the pool. That is, you can deposit
 a percentage of the current value of your portion of the pool.
+`
+
+export const roadmap =
+`
+# QFinance Roadmap
+
+QFinance is still in its beta stage as a project. Everything from the core protocol to the front-end is under active development
+and will be consistently improved for the foreseeable future.
+
+Here is a 1 year (December 2021) roadmap list of priorities for the QFinance project:
+
+1. __Deploy core protocol, including staking and airdrop contracts (COMPLETE).__
+2. __Deploy beta front-end interface, QFI Hub, as initial front end (COMPLETE).__
+3. __Launch on Uniswap and lock initial liquidity (COMPLETE).__
+4. Rebuild and rebrand the front-end with an upgraded user experience (in progress).
+5. Deploy QFinance Protocol V2 (in progress):
+
+    * Rebalancing function
+    * User voting on when/how to rebalance
+    * USDT / other asset deposits and withdrawals
+
+6. Implement an aggregator function to source best asset prices across multiple DEXes.
 `
 
 export const thanks =
