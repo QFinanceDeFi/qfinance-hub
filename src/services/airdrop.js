@@ -36,7 +36,7 @@ export const isSignee = async () => {
     const airdrop = await new web3.eth.Contract(airdropContract, address);
     try {
         let signedUp = await airdrop.methods.isSignee(window.ethereum.selectedAddress).call();
-        return signedUp
+        return signedUp[0]
     }
     catch (e) {
         console.log(e);
