@@ -67,12 +67,15 @@ const Navbar = () => {
             <AppLink onClick={() => window.open(`https://twitter.com/QFinanceDeFi`)}>
                 <FiTwitter size={20} />
             </AppLink>
-            <AppLink onClick={() => window.open(`https://t.me/QFinanceDeFi`)}>
+            <AppLink onClick={() => window.open(`https://t.me/QFinance_DeFi`)}>
                 <FiSend size={20} />
             </AppLink>
             <AppLink onClick={() => window.open('https://github.com/QFinanceDeFi')}>
                 <FiGithub size={20} />
             </AppLink>
+            <ExNavLink href="https://app.qfihub.com">
+                New Beta App
+            </ExNavLink>
             <MetaMaskButton.Outline ml='12px' size="small" onClick={_walletConnect('metamask')}>
                 {!isLoggedIn ? "Connect MetaMask" : "Connected"}
             </MetaMaskButton.Outline>
@@ -131,5 +134,22 @@ const AppLink = styled.div
 
     @media (max-width: 767px) {
         display: none;
+    }
+`
+
+const ExNavLink = styled.a
+`
+    text-decoration: none;
+    color: inherit;
+    padding: 6px 12px;
+    margin-left: 8px;
+    font-size: 14.5px;
+    text-align: center;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    box-shadow: 0 0 4px 0 lightgrey;
+
+    &:hover {
+        background: whitesmoke;
     }
 `

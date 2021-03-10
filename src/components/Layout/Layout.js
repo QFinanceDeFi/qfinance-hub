@@ -154,7 +154,7 @@ const Layout = ( {children} ) => {
                 <AppLink onClick={() => window.open(`https://twitter.com/QFinanceDeFi`)}>
                     <FiTwitter size={18} />
                 </AppLink>
-                <AppLink onClick={() => window.open(`https://t.me/QFinanceDeFi`)}>
+                <AppLink onClick={() => window.open(`https://t.me/QFinance_DeFi`)}>
                     <FiSend size={18} />
                 </AppLink>
                 <AppLink onClick={() => window.open('https://github.com/QFinanceDeFi')}>

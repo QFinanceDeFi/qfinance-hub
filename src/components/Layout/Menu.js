@@ -17,9 +17,6 @@ const Menu = () => {
             <NavLink to="/qfi">
                 <NavItem>QFI</NavItem>
             </NavLink>
-            <NavLink to="/airdrop">
-                <NavItem>Airdrop</NavItem>
-            </NavLink>
         </NavMenu>
     )
 }
