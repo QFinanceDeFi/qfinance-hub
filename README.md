@@ -1,56 +1,39 @@
-# QFinance Hub
+# QFinance public website
 
-## A front-end interface to QFinance
+## Description
 
-### What is QFinance
+This is the public QFinance website available at https://qfihub.com. It is built with ReactJS and [Gatsby](https://gatsbyjs.com). It automatically deploys to Azure when changes are merged in the master branch.
 
-QFinance is a trustless, decentralized protocol for creating investment pools on Ethereum.
-Create your own private or public pool, or join public pools created by other users on the network.
-Your assets, held securely, by a decentralized contract. Withdraw some or all of your investment at its
-current value at any time in a purely decentralized way.
+## Get Started
 
-### How does it work
+1. Clone repository
 
-QFinance is a series of smart contracts. The design is quite simple and is inspired by Uniswap. Pools are
-created from a Factory Contract. Simply select the assets you want to invest in, determin the percent of
-your portfolio to allocate to each asset, and create the pool. Then you can fund the pool with ETH as many times
-as you want.
+```git clone https://github.com/QFinanceDeFi/qfinance-site && cd qfinance-site```
 
-### What is QFinance Hub
-
-QFinance Hub is a front-end interface into the aforementioned decentralized network. It provides a simple
-interface by which to interact with the contracts and pools created. There are no proprietary features to this site.
-All functionality available on this site is available through the contracts programatically.
-
-The features available are:
-
-* See all QFinance Pools
-* Create a public or private pool
-* Deposit ETH into an existing pool (either your own private pool or a public pool)
-* Withdraw ETH from a pool
-
-### Get Started
-
-_Note: The app uses Alchemy API for its Ethereum network calls. Before beginning, you must create your own environment in [Alchemy](https://alchemyapi.io). Once you have created your environment, click "View Key" to get your http link with your own connection key._
-
-1. Install NodeJS if not installed already (https://nodejs.org)
 2. Install dependencies
-   This app uses yarn... if not installed, first run:
-   ```bash
-      npm install -g yarn
-   ```
-   Then install dependencies:
-   ```bash
-      yarn
-   ```
-3. Create a file at the root of the project called .env.development and add the following values:
-   
-   GATSBY_ETH_JSONRPC_URL=[your Alchemy http env address]
 
-4. Run development server: 
-   ```bash
-      gatsby develop
-   ```
-5. Navigate to localhost:8000 to see the site.
+```yarn```
 
-**Note: This is connecting to the same factory contract as the live version! Once deployed to main net, this will be updated to run in the testnet only.**
+If you don't have yarn, install it: ```npm i g yarn```
+
+3. Run in dev mode
+
+```gatsby develop```
+
+This command should start the app on port 8000.
+
+4. Navigate to localhost:8000 in browser.
+
+5. Build and serve production version
+
+```gatsby build```
+
+This builds a production version. Use this command to serve it:
+
+```gatsby serve```
+
+It should host a production version at localhost:9000.
+
+## Bugs, Questions, or Others
+
+You can submit bugs using the issues tab. If you have questions, please reach out to mod@qfihub.com. If you want to help out, you can either make a pull request or get in touch with us via email.

@@ -1,51 +1,43 @@
-const config = require('./config');
-require('dotenv').config();
-
 module.exports = {
-    siteMetadata: {
-        title:          config.siteTitle,
-        description:    config.siteDesc,
-        author:         config.siteAuthor,
-        logoUrl:        config.siteLogoUrl,
-    },
-
-    pathPrefix: config.pathPrefix,
-    
-    proxy: {
-        prefix: "/api",
-        url: "http://127.0.0.1:7071",
+  siteMetadata: {
+    title: `QFinance`,
+    description: `DeFi ETF investment pools on Ethereum. Fully trustless, permissionless, and decentralized.`,
+    author: `@QFinanceDeFi`,
+    logoUrl: "src/images/qlogo512.png",
+    siteUrl: `https://qfihub.com`,
+  },
+  plugins: [
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-image`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/src/images`,
       },
-
-    plugins: [
-        `gatsby-plugin-react-helmet`,
-        {
-            resolve: `gatsby-source-filesystem`,
-            options: {
-                name: `images`,
-                path: `${__dirname}/src/images`,
-            },
-        },
-        `gatsby-transformer-sharp`,
-        `gatsby-plugin-sharp`,
-        {
-            resolve: `gatsby-plugin-manifest`,
-            options: {
-                name:               config.manifestName,
-                short_name:         config.manifestShortName,
-                start_url:          config.pathPrefix || config.manifestStartUrl,
-                background_color:   config.manifestBackgroundColor,
-                theme_color:        config.manifestThemeColor,
-                display:            config.manifestDisplay,
-                icon:               config.manifestIcon, // This path is relative to the root of the site.
-            },
-        },
-        `gatsby-plugin-lodash`,
-        `gatsby-plugin-netlify`,
-        `gatsby-plugin-styled-components`,
-        `gatsby-plugin-social-cards`,
-
-        // this (optional) plugin enables Progressive Web App + Offline functionality
-        // To learn more, visit: https://gatsby.dev/offline
-        `gatsby-plugin-offline`,
-    ],
-};
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: "QFinance Hub",
+        short_name: "QFI Hub",
+        start_url: "https://qfihub.com",
+        background_color: "black",
+        theme_color: "#BA9860",
+        display: "standalone",
+        icon: "src/images/favicon-32x32.png",
+      },
+    },
+    {
+      resolve: "gatsby-plugin-anchor-links",
+      options: {
+        offset: -100
+      }
+    },
+    `gatsby-plugin-offline`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-social-cards`,
+    `gatsby-plugin-gatsby-cloud`
+  ],
+}

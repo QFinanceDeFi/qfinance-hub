@@ -1,0 +1,28 @@
+.what-is {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 32px;
+  flex-wrap: wrap;
+}
+
+.feature-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 200px;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.feature-icon {
+  font-size: 64px;
+  text-align: center;
+  height: 96px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.feature-icon svg {
+  width: 64px;
+}
