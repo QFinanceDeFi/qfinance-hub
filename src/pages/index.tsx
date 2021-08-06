@@ -14,7 +14,7 @@ const IndexPage: React.FC = () => {
 
   return (
     <Layout>
-        <Seo title="QFI Hub" description="DeFi ETF investment pools on Ethereum. Fully trustless, permissionless, and decentralized." />
+        <Seo title="QFinance - DeFi Investment Pools on Ethereum" description="DeFi ETF investment pools on Ethereum. Fully trustless, permissionless, and decentralized." />
           <Main />
           <Tokens />
           <WhatIs />

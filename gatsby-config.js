@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `QFinance`,
+    title: `QFinance - DeFi Investment Pools on Ethereum`,
     description: `DeFi ETF investment pools on Ethereum. Fully trustless, permissionless, and decentralized.`,
     author: `@QFinanceDeFi`,
     logoUrl: "src/images/qlogo512.png",

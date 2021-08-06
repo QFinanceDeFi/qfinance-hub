@@ -45,7 +45,7 @@ function Seo({ description, lang, meta, title }) {
         },
         {
           property: `og:image`,
-          content: `https://qfihub.com/qlogo512.jpg`,
+          content: `https://qfihub.com/qfi_goldOnBlack.jpg`,
         },
         {
           property: `og:description`,
@@ -61,7 +61,7 @@ function Seo({ description, lang, meta, title }) {
         },
         {
           property: `twitter:image`,
-          content: `https://qfihub.com/qlogo512.jpg`,
+          content: `https://qfihub.com/qfi_goldOnBlack.jpg`,
         },
         {
           name: `twitter:creator`,
