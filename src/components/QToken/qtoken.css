@@ -53,13 +53,14 @@
   margin: 0;
   width: 240px;
   height: 64px;
-  background: rgba(50, 50, 50, 0.6);
+  background: #ba9860;
+  color: black;
   text-decoration: none;
 }
 
 .q-token-link:hover {
-  background: #ba9860;
-  color: black;
+  background: rgba(50, 50, 50, 0.6);
+  color: #ba9860;
 }
 
 @media (max-width: 1372px) {

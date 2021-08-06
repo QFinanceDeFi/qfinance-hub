@@ -101,3 +101,41 @@
   width: 280px;
   flex-grow: 1;
 }
+
+.distribution {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  min-height: 600px;
+}
+
+.distribution-header {
+  font-size: 24px;
+  text-align: center;
+  width: 100%;
+  text-shadow: 1px 1px 8px grey;
+}
+
+.distribution-item {
+  font-size: 18px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  height: 32px;
+  padding: 0;
+}
+
+.distribution-info {
+  margin: 16px;
+}
+
+.distribution-info-item {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  min-height: 64px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
