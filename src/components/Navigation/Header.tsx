@@ -7,11 +7,7 @@ import { FaGithub, FaTelegramPlane, FaMediumM, FaTwitter } from "react-icons/fa"
 import useScrollHeight from "../../hooks/useScrollHeight"
 import useWindowWidth from "../../hooks/useWindowWidth"
 
-interface DataProps {
-  siteTitle: string;
-}
-
-const Header: React.FC<DataProps> = ({ siteTitle }) => {
+const Header: React.FC = () => {
   const height: number = useScrollHeight()
   const width: number = useWindowWidth()
 
@@ -22,7 +18,7 @@ const Header: React.FC<DataProps> = ({ siteTitle }) => {
       <div style={{display: 'flex', alignSelf: 'center', alignItems: 'center'}}>
         <AnchorLink className="brand" to="/#main">
           <GatsbyImage image={image.file.childImageSharp.gatsbyImageData} alt="logo" />
-          {width > 800 && <span className="brand-title">{siteTitle}</span>}
+          {width > 800 && <span className="brand-title">QFinance</span>}
         </AnchorLink>
         <div className="nav-links">
           <AnchorLink to="/#tech" title="Tech">Tech</AnchorLink>

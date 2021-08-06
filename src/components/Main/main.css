@@ -60,7 +60,7 @@
 
 .cta-button:hover {
   color: #ba9860;
-  box-shadow: 0 0 12px 4px rgba(120,120,120,0.7);
+  box-shadow: 0 0 12px 8px #ba97605e;
   border: 1px solid #ba9860;
   cursor: pointer;
 }
