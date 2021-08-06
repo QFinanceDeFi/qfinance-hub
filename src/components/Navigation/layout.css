@@ -96,12 +96,12 @@ header a {
   max-width: 128px;
   cursor: pointer;
   margin: 0 24px 0 12px;
-  box-shadow: 0 0 8px 2px rgba(120,120,120,0.6);
+  box-shadow: 0 0 8px 4px rgba(120,120,120,0.6);
   text-decoration: none;
 }
 
 .app-button-link:hover {
-  box-shadow: 0 0 8px 2px #ba9860;
+  box-shadow: 0 0 8px 4px #ba976067;
   background: rgba(8, 8, 8, 0.8);
 }
 
