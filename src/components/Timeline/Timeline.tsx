@@ -5,7 +5,7 @@ import {
 } from "react-vertical-timeline-component"
 import "react-vertical-timeline-component/style.min.css"
 import { FiMonitor } from "react-icons/fi"
-import { RiTestTubeLine, RiRocket2Line, RiGovernmentLine } from "react-icons/ri"
+import { RiTestTubeLine, RiRocket2Line, RiGovernmentLine, RiCopperDiamondLine, RiStackLine } from "react-icons/ri"
 import {
   GiTrafficLightsGreen,
   GiUpgrade,
@@ -170,8 +170,8 @@ const Timeline: React.FC<any> = () => {
           <h3 className="vertical-timeline-element-title">
             Deploy Multiswap Router
           </h3>
-          <h4 style={{ color: "yellow", margin: 0, fontWeight: 400 }}>
-            In Progress
+          <h4 style={{ color: "green", margin: 0, fontWeight: 400 }}>
+            Complete
           </h4>
           <p>
             We are abstracting the swap function out of the QPools so that users
@@ -192,7 +192,7 @@ const Timeline: React.FC<any> = () => {
             Deploy QFinance V2
           </h3>
           <h4 style={{ color: "yellow", margin: 0, fontWeight: 400 }}>
-            In progress
+            In progress (delayed until September)
           </h4>
           <p>
             Deploy the new QPool Factory contract to create V2 QPools. V2 will
@@ -205,7 +205,48 @@ const Timeline: React.FC<any> = () => {
           className="vertical-timeline-element--work"
           contentStyle={{ background: "rgba(58,58,58,0.6)", color: "#BA9860" }}
           contentArrowStyle={{ borderRight: "7px solid  #BA9860" }}
-          date="January 2021"
+          date="September 2021"
+          iconStyle={iconStyle}
+          icon={<RiStackLine />}
+        >
+          <h3 className="vertical-timeline-element-title">
+            Launch QFI on Layer 2s
+          </h3>
+          <h4 style={{ color: "yellow", margin: 0, fontWeight: 400 }}>
+            In progress
+          </h4>
+          <p>
+            Gas fees on Ethereum getting you down? We're working on supporting other chains
+            and Ethereum layer 2 solutions to give our community more options to buy and use QFI.
+            Right now our priorities are Polygon and AVAX.
+          </p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          contentStyle={{ background: "rgba(58,58,58,0.6)", color: "#BA9860" }}
+          contentArrowStyle={{ borderRight: "7px solid  #BA9860" }}
+          date="November 2021"
+          iconStyle={iconStyle}
+          icon={<RiCopperDiamondLine />}
+        >
+          <h3 className="vertical-timeline-element-title">
+            NFT Pools
+          </h3>
+          <h4 style={{ color: "yellow", margin: 0, fontWeight: 400 }}>
+            Upcoming
+          </h4>
+          <p>
+            NFTs are hot a new asset class. Over the next 5-10 years, we expect the explosion of NFTs
+            to continue. Some NFTs become worth millions, and sometimes it is hard to predict which. Our
+            QPool solution, applied to fractionalized pools, helps you acquire pieces of many NFTs at once
+            and maximize your exposure to potential million dollar assets.
+          </p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          contentStyle={{ background: "rgba(58,58,58,0.6)", color: "#BA9860" }}
+          contentArrowStyle={{ borderRight: "7px solid  #BA9860" }}
+          date="January 2022"
           iconStyle={iconStyle}
           icon={<RiGovernmentLine />}
         >
